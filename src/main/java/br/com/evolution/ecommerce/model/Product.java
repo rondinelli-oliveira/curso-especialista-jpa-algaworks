@@ -1,4 +1,4 @@
-package br.com.evolution.ecommerce;
+package br.com.evolution.ecommerce.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
