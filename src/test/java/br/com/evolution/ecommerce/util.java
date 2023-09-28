@@ -1,12 +1,10 @@
 package br.com.evolution.ecommerce;
 
+import br.com.evolution.ecommerce.model.Product;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.*;
 
 public class util {
 
@@ -32,5 +30,24 @@ public class util {
     @After
     public void tearDown() {
         entityManager.close();
+    }
+
+    @Test
+    public void findById() {
+        Product product = entityManager.find(Product.class, 1);
+//        Product product = entityManager.getReference(Product.class,1);
+
+        Assert.assertNotNull(product);
+        Assert.assertEquals("Kindle", product.getName());
+    }
+
+    @Test
+    public void updateReference() {
+        Product product = entityManager.find(Product.class, 1);
+        product.setName("Microphone Samson");
+
+        entityManager.refresh(product);
+
+        Assert.assertEquals("Kindle", product.getName());
     }
 }
