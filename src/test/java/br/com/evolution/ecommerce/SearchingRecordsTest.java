@@ -1,7 +1,6 @@
 package br.com.evolution.ecommerce;
 
 import br.com.evolution.ecommerce.model.Product;
-import br.com.evolution.ecommerce.util.EntityManagerTest;
 import org.junit.Assert;
 import org.junit.Test;
 

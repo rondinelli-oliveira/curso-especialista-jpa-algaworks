@@ -1,4 +1,4 @@
-package br.com.evolution.ecommerce.util;
+package br.com.evolution.ecommerce;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
